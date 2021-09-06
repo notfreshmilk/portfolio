@@ -1,0 +1,233 @@
+$view_width1:1400px;//1440(QHD)
+$view_width2:1024px;
+$view_width3:960px;
+$view_width4:768px; 
+$view_width5:600px;
+$view_width6:480px;
+$view_width7:340px;
+
+@mixin pc1{
+    @media (max-width:$view_width1){
+        .mobile_header { display: none; }
+        .mobile_mns{display: none;}
+        button.btn_point.circle{width:120px;height:120px;}
+        .whole_frame h2.in_tit{font-size:2.5vw};
+    }
+}
+
+@mixin pc2{
+    @media (min-width:$view_width3) and (max-width:$view_width1){
+        header .mobile_header { display: none; }
+        .mobile_mns{display: none;}
+        .whole_frame .wrap{padding:40px 3% 3%};
+    }
+}
+
+@mixin tab1{
+    @media (min-width:($view_width5)+1px) and (max-width:($view_width3)-1px){
+        header .pc_header { display: none; }
+        header .mobile_header { display: flex;}
+        .mobile_mns{display: block;}
+        .whole_frame{width:100%};
+        .whole_frame .wrap{padding:40px 3% 3%};
+        .whole_frame h2.in_tit{font-size: 2.5rem; }
+        .whole_frame .wrap .layout_col_l{width: 100%;}
+        .whole_frame .wrap .layout_col_m{
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+        button.btn_point.circle{width:100px;height:100px; bottom:2%; right:2%;}
+        .main{
+            & h2{font-size: 3rem;}
+        }
+        .skill_wrapper{
+            width:200% !important;
+        }
+        .skills{
+            & .skills_list{
+                width:100% !important;
+                justify-content: flex-start;
+                margin-top:20px;
+                //position: static;
+                & li{
+                    //width:100%;
+                    font-size: 2vw;
+                    padding: 2% 0;
+                }
+            }
+
+            & .skill_wrapper{
+                top: unset;
+                //bottom: 150px;
+            }
+        }
+
+        .projects{
+            & .prj_mn_wrap{
+                width: 100%;
+                overflow-x: scroll;
+            }
+            & .prj_mn{
+                flex-direction: row;
+                width: 232%;
+                & > li{
+                    padding:4px 13px;
+                    border:1px solid $color1;
+                    border-radius: 15px;
+                    font-size:13px;
+                    margin-right:7px;
+
+                    &.on{
+                        font-size:13px;
+                        font-weight: 400;
+                        background-color: $color1;
+                    }
+                }
+                & > li.on:after{display: none;}
+            }
+
+            & .project_wrap{
+                & .project_list{
+                    height: 430px;
+                }
+            }
+        }
+
+        .contact{
+            & form{
+                width:100%;
+            }
+            & .contact_frm{
+                width:100%;
+            }
+            & .contact_wrap{
+                align-items: center;
+            }
+        }
+
+
+    }
+}
+
+@mixin mobile1{
+    @media (min-width:$view_width7) and (max-width:$view_width5){
+        //.pc_header { display: none; }
+        //.mobile_header { display: block;}
+        //.whole_frame .wrap{padding:40px 3% 3%};
+        body{overflow-y: hidden;}
+        .whole_frame{width:100%};
+        header .mobile_header { display: flex; }
+        .mobile_mns{display: block;}
+        header .pc_header { display: none; }
+        .whole_frame .wrap{padding:80px 3% 3%};
+        .whole_frame h2.in_tit{font-size: 5vw;}
+        .whole_frame .wrap .layout_col_l{width: 100%;}
+        .whole_frame .wrap .layout_col_m{
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        button.btn_point.circle{width:80px;height:80px; bottom:2%; right:2%; font-size:15px;}
+        .main{
+            & h2{
+                font-size: 6vw;
+            }
+        }
+        .skill_wrapper{
+            width:200% !important;
+            top: unset;
+            //bottom: 150px;
+        }
+        .skills{
+            & .skills_list{
+                width:100% !important;
+                //position: static;
+                & li{
+                    //width:100%;
+                    font-size: 3.8vw;
+                    padding: 2% 0;
+
+                    & > .skills_inner_tit{
+                        height: 40px;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+
+        .projects{
+            & .project_wrap{
+                height:100%;
+            }
+            & .prj_mn_wrap{
+                width: 100%;
+                overflow-x: scroll;
+                margin-bottom:20px;
+            }
+            & .prj_mn{
+                flex-direction: row;
+                justify-content: flex-start;
+                width: 350%;
+
+                & > li{
+                    padding:4px 13px;
+                    border:1px solid $color1;
+                    border-radius: 15px;
+                    font-size:13px;
+                    margin-right:7px;
+
+                    &.on{
+                        font-size:13px;
+                        font-weight: 400;
+                        background-color: $color1;
+                    }
+                }
+                & > li.on:after{display: none;}
+            }
+
+            & .project_wrap{
+                & .project_list{
+                    height: 400px;
+                    width: 320px;
+                }
+            }
+
+            & .txt_bottom{
+                display: none;
+            }
+        }
+
+        .contact{
+            & .wrap{
+                & .layout_col_l.ctt{
+                    & .introduce_wrap{display: none;}
+                }
+            }
+            & form{
+                width:100%;
+            }
+            & .contact_frm{
+                width:100%;
+                & textarea.fi{
+                    height: 100px;
+                }
+            }
+            & .contact_wrap{
+                align-items: center;
+                & p{
+                    font-size:13px;
+                }
+
+            }
+
+            
+        }
+
+    }
+
+}
+
+footer{
+    opacity: 0;
+}
